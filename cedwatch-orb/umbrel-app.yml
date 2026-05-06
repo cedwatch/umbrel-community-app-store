@@ -1,0 +1,14 @@
+manifestVersion: 1
+"id": "cedwatch-orb",
+"name": "Orb Sensor",
+"version": "1.0.0",
+"description": "Network monitoring sensor by Ookla.",
+"developer": "Ookla",
+"website": "https://github.com/orbforge/orb-docs",
+"repo": "https://github.com/cedwatch/umbrel-community-store",
+"support": "https://github.com/orbforge/orb-docs",
+"port": 5219,
+"requires" : [],
+"gallery": [],
+"path": "orb",
+"defaultItem": ""
