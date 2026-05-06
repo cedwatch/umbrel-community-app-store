@@ -11,5 +11,5 @@ support: https://github.com/orbforge/orb-docs
 
 requires : [],
 gallery: [],
-path: ""
+path: "cedwatch-orb"
 defaultItem: ""
