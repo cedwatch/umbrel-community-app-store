@@ -3,7 +3,6 @@ version: "3.7"
 services:
 
   app_proxy:
-    
     environment:
       # Format STRICT : <app-id>_<service-name>_1
       # Ici : cedwatch-orb (ID) + server (nom du service plus bas)
