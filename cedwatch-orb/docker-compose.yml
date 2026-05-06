@@ -1,20 +1,17 @@
 version: "3.7"
 
 services:
+
   app_proxy:
-    image: getumbrel/app-proxy:1.7.0
-    restart: on-failure
+    
     environment:
       # Format STRICT : <app-id>_<service-name>_1
       # Ici : cedwatch-orb (ID) + server (nom du service plus bas)
       APP_HOST: cedwatch-orb_server_1
       APP_PORT: 5219
-    ports:
-      - 5219:5219
 
   server:
     image: orbforge/orb:latest
-    restart: always
     # On ajoute un utilisateur pour éviter les soucis de permissions root
     user: "1000:1000"
     # L'init permet de bien gérer les signaux d'arrêt (clean stop)
