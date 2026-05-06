@@ -1,5 +1,2 @@
 id: "cedwatch"
-name: "CedWatch Store"
-description: "Monitoring, Optimization, Bitcoin Dashboard on Umbrel Pi4."
-maintainer: "cedwatch"
-website: "https://github.com/cedwatch"
+name: "CedWatch"
