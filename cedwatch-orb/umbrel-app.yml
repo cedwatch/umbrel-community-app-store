@@ -13,3 +13,32 @@ requires : [],
 gallery: [],
 path: "cedwatch-orb"
 defaultItem: ""
+
+
+manifestVersion: 1
+id: cedwatch-orb
+name: Orb Sensor
+tagline: Orb by Ookla on Umbrel
+icon: https://github.com/cedwatch/umbrel-community-app-store/icon.svg
+category: Network
+version: "1.0.0"
+port: 5219
+description: >-
+  Add your app's description here.
+
+
+  You can also add newlines!
+
+developer: Ookla
+website: https://ookla.com
+submitter: cedwatch
+submission: https://github.com/cedwatch/umbrel-community-app-store
+repo: https://github.com/cedwatch/umbrel-community-app-store
+support: []
+gallery:[]
+releaseNotes: >-
+  Add what's new in the latest version of your app here.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
