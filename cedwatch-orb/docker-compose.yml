@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    image: getumbrel/app-proxy:1.7.0
+    restart: on-failure
+    ports:
+      - 5219:5219
+    environment:
+      APP_HOST: $APP_ORB_IP
+      APP_PORT: 5219
+
+  server:
+    image: orbforge/orb:latest
+    container_name: orb_sensor
+    restart: always
+    # On laisse Umbrel gérer le réseau interne
