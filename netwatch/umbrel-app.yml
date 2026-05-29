@@ -1,0 +1,18 @@
+version: 1.0.0
+name: netwatch
+title: NetWatch
+category: monitoring
+description: >
+  Network performance monitor that tests internet speed via Ookla and Cloudflare,
+  stores historical data, and provides a responsive dashboard.
+  Tests run automatically every 30 minutes (configurable).
+developer: CedRacine
+website: https://ced.watch/appz/netwatch
+repo: https://github.com/cedwatch/umbrel-community-app-store/netwatch
+dependencies: []
+ports:
+  - 5218:5218
+# Optional: add screenshot paths for app store listing
+# screenshot_paths:
+#   - screenshots/dashboard.png
+#   - screenshots/settings.png
