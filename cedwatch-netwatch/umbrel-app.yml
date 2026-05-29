@@ -1,16 +1,24 @@
 manifestVersion: 1
 id: cedwatch-netwatch
 name: NetWatch
-tagline: ISP speed monitor with Ookla + Cloudflare dual test
+tagline: ISP speed monitor - Ookla last-mile + Cloudflare dual test
 category: networking
 version: "1.3.2"
 port: 5218
 description: >-
-  NetWatch monitors your internet connection 24/7 with dual speedtests
-  (Ookla last-mile + Cloudflare international). Heatmap, charts, dropout
-  detection, privacy mode. Built in Kampot, Cambodia.
-developer: ced·watch
+  NetWatch monitors your internet connection 24/7 with automated dual
+  speedtests: Ookla (last-mile, closest server) and Cloudflare (international
+  backbone). Features include 14-day dropout heatmap, download/upload/ping
+  charts, stability scoring, burst test mode, and a privacy Tailscale-only
+  access toggle. Zero npm dependencies. Data stored locally, never leaves
+  your device. Built in Kampot, Cambodia by ced.watch.
+releaseNotes: >-
+  v1.3.2 - Tailscale auto-detection, iptables privacy enforcement,
+  CF Stability gauge, compact heatmap with touch tooltips, table CF UL column,
+  settings panel restructured.
+developer: ced.watch
 website: https://ced.watch
 repo: https://github.com/cedwatch/netwatch
 support: https://github.com/cedwatch/netwatch/issues
 icon: https://raw.githubusercontent.com/cedwatch/umbrel-community-app-store/main/cedwatch-netwatch/icon.svg
+screenshots: []
