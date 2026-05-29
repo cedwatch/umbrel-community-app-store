@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  app:
+    image: ghcr.io/cedwatch/blockboard:latest
+    container_name: cedwatch-blockboard_app_1
+    restart: on-failure
+    stop_grace_period: 1m
+    ports:
+      - "4000:80"
+    networks:
+      - default
+    tmpfs:
+      - /tmp:mode=1777,size=64m
+
+networks:
+  default:
+    name: cedwatch-blockboard_default

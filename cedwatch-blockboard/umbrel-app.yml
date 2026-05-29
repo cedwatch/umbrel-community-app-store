@@ -1,0 +1,44 @@
+manifestVersion: 1
+id: cedwatch-blockboard
+name: BlockBoard
+tagline: Real-time Bitcoin dashboard
+icon: https://raw.githubusercontent.com/cedwatch/umbrel-community-app-store/main/cedwatch-blockboard/icon.png
+category: Finance
+version: "1.0.0"
+port: 4000
+description: >-
+  BlockBoard is a privacy-first, real-time Bitcoin dashboard.
+
+  No tracking. No ads. No account. Just pure signal.
+
+  Features:
+  - Live BTC price with 8 currency pairs (USD, EUR, GBP, JPY, CHF, CAD, AUD, PAXG)
+  - Mempool fees (Fast / Hour / Eco) with live fee meter
+  - Block height, BTC mined, hashrate & difficulty
+  - Last block timer with tx count and size
+  - Candle chart with 9 ranges (1h → all-time max) and crosshair
+  - Market cap, 24h volume, BTC dominance
+  - ETF 24h flow (net inflow / outflow)
+  - Lightning Network stats (nodes, channels, capacity)
+  - Liquid Network stats toggle
+  - Halving countdown (blocks, days, weeks, months)
+  - BlockBoard Pulse: proprietary sentiment index (no Fear & Greed dependency)
+  - Weather widget with timezone clock for any city
+  - 8 skins: BTC Orange, Lightning, Liquid, Plan B, El Zonte, Amorgos, Dubai, Green Back
+  - PWA installable (Add to Home Screen)
+
+  Built in Kampot, Cambodia. Open-source. Donationware.
+developer: Ced (ced.watch)
+website: https://blockboard.live
+repo: https://github.com/cedwatch/umbrel-community-app-store
+support: https://github.com/cedwatch/umbrel-community-app-store/issues
+gallery:
+  - https://raw.githubusercontent.com/cedwatch/umbrel-community-app-store/main/cedwatch-blockboard/1.jpg
+  - https://raw.githubusercontent.com/cedwatch/umbrel-community-app-store/main/cedwatch-blockboard/2.jpg
+  - https://raw.githubusercontent.com/cedwatch/umbrel-community-app-store/main/cedwatch-blockboard/3.jpg
+releaseNotes: >-
+  v1.0.0 — Initial release on Umbrel Community App Store.
+  Full BlockBoard dashboard with BlockBoard Pulse sentiment index,
+  candle chart engine, 8 skins, Lightning/Liquid toggle, and ETF flow tracking.
+dependencies: []
+path: ""
