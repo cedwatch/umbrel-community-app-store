@@ -1,0 +1,15 @@
+[Unit]
+Description=NetWatch ISP Monitor
+After=network.target
+
+[Service]
+Type=simple
+User=umbrel
+WorkingDirectory=/home/umbrel/netwatch
+ExecStart=/usr/bin/node /home/umbrel/netwatch/server.js
+Restart=always
+RestartSec=5
+Environment=NETWATCH_PORT=5218
+
+[Install]
+WantedBy=multi-user.target
