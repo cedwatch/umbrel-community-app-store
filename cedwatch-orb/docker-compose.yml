@@ -1,17 +1,8 @@
-version: "3.7"
-
 services:
-
-  app_proxy:
-    environment:
-      # Format STRICT : <app-id>_<service-name>_1
-      # Ici : cedwatch-orb (ID) + server (nom du service plus bas)
-      APP_HOST: cedwatch-orb_server_1
-      APP_PORT: 5219
-
   server:
     image: orbforge/orb:latest
-    # On ajoute un utilisateur pour éviter les soucis de permissions root
-    user: "1000:1000"
-    # L'init permet de bien gérer les signaux d'arrêt (clean stop)
+    restart: unless-stopped
+    network_mode: host
     init: true
+    volumes:
+      - "${APP_DATA_DIR}/config:/root/.config/orb"
