@@ -1,8 +1,14 @@
 services:
-  server:
+  app_proxy:
+    environment:
+      APP_HOST: cedwatch-orb_web_1
+      APP_PORT: 7443
+      PROXY_AUTH_ADD: "false"
+
+  web:
     image: orbforge/orb:latest
     restart: unless-stopped
-    network_mode: host
     init: true
+    network_mode: host
     volumes:
       - "${APP_DATA_DIR}/config:/root/.config/orb"
