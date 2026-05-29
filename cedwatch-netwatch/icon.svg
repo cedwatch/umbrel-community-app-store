@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Background -->
+  <rect width="256" height="256" fill="#0d1a14"/>
+
+  <!-- Subtle grid -->
+  <line x1="64"  y1="0"  x2="64"  y2="256" stroke="#1a3020" stroke-width="0.8"/>
+  <line x1="128" y1="0"  x2="128" y2="256" stroke="#1a3020" stroke-width="0.8"/>
+  <line x1="192" y1="0"  x2="192" y2="256" stroke="#1a3020" stroke-width="0.8"/>
+  <line x1="0"  y1="64"  x2="256" y2="64"  stroke="#1a3020" stroke-width="0.8"/>
+  <line x1="0"  y1="128" x2="256" y2="128" stroke="#1a3020" stroke-width="0.8"/>
+  <line x1="0"  y1="192" x2="256" y2="192" stroke="#1a3020" stroke-width="0.8"/>
+
+  <!-- Signal arcs (wifi/network style, centred on bottom) -->
+  <!-- Outer arc — dim, dropout colour -->
+  <path d="M 48 168 A 80 80 0 0 1 208 168" fill="none" stroke="#e74c3c" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+  <!-- Middle arc — amber / marginal -->
+  <path d="M 72 168 A 56 56 0 0 1 184 168" fill="none" stroke="#f0a500" stroke-width="7" stroke-linecap="round" opacity="0.6"/>
+  <!-- Inner arc — green / good -->
+  <path d="M 96 168 A 32 32 0 0 1 160 168" fill="none" stroke="#2ecc71" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Centre dot -->
+  <circle cx="128" cy="168" r="9" fill="#2ecc71"/>
+  <circle cx="128" cy="168" r="4" fill="#0d1a14"/>
+
+  <!-- Chart bars — mini bar chart above arcs suggesting speed history -->
+  <!-- Bars represent download speed history, alternating OK/dropout pattern -->
+  <rect x="44"  y="110" width="8" height="28" rx="2" fill="#2ecc71" opacity="0.9"/>
+  <rect x="57"  y="126" width="8" height="12" rx="2" fill="#e74c3c" opacity="0.7"/>
+  <rect x="70"  y="106" width="8" height="32" rx="2" fill="#2ecc71" opacity="0.9"/>
+  <rect x="83"  y="124" width="8" height="14" rx="2" fill="#e74c3c" opacity="0.7"/>
+  <rect x="96"  y="100" width="8" height="38" rx="2" fill="#2ecc71" opacity="0.9"/>
+  <rect x="109" y="122" width="8" height="16" rx="2" fill="#e74c3c" opacity="0.7"/>
+  <rect x="122" y="98"  width="8" height="40" rx="2" fill="#2ecc71" opacity="0.9"/>
+  <rect x="135" y="120" width="8" height="18" rx="2" fill="#e74c3c" opacity="0.7"/>
+  <rect x="148" y="104" width="8" height="34" rx="2" fill="#2ecc71" opacity="0.9"/>
+  <rect x="161" y="118" width="8" height="20" rx="2" fill="#2ecc71" opacity="0.6"/>
+  <rect x="174" y="96"  width="8" height="42" rx="2" fill="#2ecc71" opacity="0.9"/>
+  <rect x="187" y="108" width="8" height="30" rx="2" fill="#2ecc71" opacity="0.9"/>
+
+  <!-- Horizontal baseline for bars -->
+  <line x1="40" y1="138" x2="200" y2="138" stroke="#2d4a35" stroke-width="1"/>
+
+  <!-- "NW" monogram top-right, very subtle -->
+  <text x="196" y="42" font-family="monospace" font-size="18" font-weight="bold" fill="#2d6a4f" letter-spacing="-1" opacity="0.7">NW</text>
+
+  <!-- Bottom label -->
+  <text x="128" y="220" text-anchor="middle" font-family="monospace" font-size="14" font-weight="bold" fill="#2ecc71" letter-spacing="3">NETWATCH</text>
+  <text x="128" y="236" text-anchor="middle" font-family="monospace" font-size="9" fill="#4a6b52" letter-spacing="2">ISP MONITOR</text>
+</svg>

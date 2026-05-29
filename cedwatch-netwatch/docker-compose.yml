@@ -1,0 +1,11 @@
+services:
+  app:
+    image: ghcr.io/cedwatch/netwatch:latest
+    restart: unless-stopped
+    ports:
+      - "5218:5217"
+    volumes:
+      - "${APP_DATA_DIR}/data:/data"
+    environment:
+      - NETWATCH_PORT=5217
+      - NETWATCH_DATA=/data
