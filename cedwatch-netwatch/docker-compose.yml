@@ -6,6 +6,8 @@ services:
       - "5218:5217"
     volumes:
       - "${APP_DATA_DIR}/data:/data"
+      - "${APP_DATA_DIR}/bin:/app/bin"
     environment:
       - NETWATCH_PORT=5217
       - NETWATCH_DATA=/data
+
