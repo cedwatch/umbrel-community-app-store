@@ -1,27 +1,25 @@
 manifestVersion: 1
 id: cedwatch-orb
 name: Orb Sensor
-tagline: Orb by Ookla on Umbrel
-icon: https://github.com/cedwatch/umbrel-community-app-store/icon.svg
-category: Network
-version: "1.0.0"
+tagline: Network monitoring sensor by Ookla — runs 24/7 on your Umbrel
+category: networking
+version: "latest"
 port: 5219
 description: >-
-  Add your app's description here.
+  Orb by Ookla is a lightweight network monitoring sensor that runs continuously
+  on your Umbrel device. It measures your internet connection quality including
+  latency, packet loss, jitter, and speed — and sends data to your Orb account
+  for historical tracking and alerts. Claim your sensor via the Orb mobile app
+  after installation. Requires a free Orb account at orb.net.
 
-
-  You can also add newlines!
-
-developer: Ookla
-website: https://ookla.com
-submitter: cedwatch
-submission: https://github.com/cedwatch/umbrel-community-app-store
-repo: https://github.com/cedwatch/umbrel-community-app-store
-support: []
-gallery:[]
+  Note: Orb uses host network mode to monitor all network interfaces directly.
+  No web UI — manage via the Orb mobile app or orb.net dashboard.
 releaseNotes: >-
-  Add what's new in the latest version of your app here.
-dependencies: []
-path: ""
-defaultUsername: ""
-defaultPassword: ""
+  Initial release. Uses official orbforge/orb:latest Docker image.
+  Data persisted in Umbrel app-data directory.
+developer: Ookla / Orb
+website: https://orb.net
+repo: https://github.com/orbforge/orb-docs
+support: https://orb.net/docs
+icon: https://raw.githubusercontent.com/cedwatch/umbrel-community-app-store/main/cedwatch-orb/icon.svg
+screenshots: []
