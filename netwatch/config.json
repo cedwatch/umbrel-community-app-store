@@ -1,7 +1,0 @@
-{
-  "interval": 30,
-  "threshDl": 5,
-  "threshPing": 100,
-  "skin": 0,
-  "ooklaPath": "./bin/speedtest"
-}
