@@ -1,0 +1,33 @@
+manifestVersion: 1
+id: cedwatch-rclone-backup
+name: Rclone Backup
+tagline: Automated SFTP backup for your web hosting
+category: networking
+version: "1.0.0"
+port: 4010
+description: >-
+  Rclone Backup syncs your web hosting files to your Umbrel every night via SFTP.
+  No cloud. No subscription. Your files, on your hardware.
+
+  Setup takes 2 minutes — enter your hosting credentials, upload your SSH key,
+  choose which folders to backup, and you're done. Set and forget.
+
+  Features:
+  - Web UI — no command line needed
+  - Daily rolling 7-day backup (Mon → Sun, auto-overwrite)
+  - SFTP via SSH key — no password stored
+  - Choose folders to include and file types to exclude
+  - Test connection before first run
+  - Run backup on demand
+  - Live log tail in the browser
+  - Works with cPanel / Spaceship / any shared hosting on port 21098
+
+  Built in Kampot, Cambodia. Open-source. Donationware.
+releaseNotes: >-
+  v1.0.0 — Initial release. Single-container PHP + nginx + crond + rclone binary.
+  Full web UI for configuration, SSH key upload, connection test, and log viewer.
+developer: Ced (ced.watch)
+website: https://ced.watch
+repo: https://github.com/cedwatch/umbrel-community-app-store
+support: https://github.com/cedwatch/umbrel-community-app-store/issues
+icon: https://raw.githubusercontent.com/cedwatch/umbrel-community-app-store/main/cedwatch-rclone-backup/icon.png
