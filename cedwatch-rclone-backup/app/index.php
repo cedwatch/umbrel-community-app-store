@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
         } else {
             $out = [];
             exec(
-                'rclone lsd --config ' . escapeshellarg(RCLONE_CONF)
+                '/usr/local/bin/rclone lsd --config ' . escapeshellarg(RCLONE_CONF)
                 . ' ' . escapeshellarg($s['remote'] . ':' . $s['source'])
                 . ' --sftp-key-file ' . escapeshellarg(KEY_FILE)
                 . ' 2>&1',
