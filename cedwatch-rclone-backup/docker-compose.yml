@@ -6,4 +6,4 @@ services:
       - "4010:80"
     volumes:
       - ${APP_DATA_DIR}/config:/data/config
-      - ${APP_DATA_DIR}/backups:/data/backups
+      - /home/umbrel/umbrel/home/SpaceshipBak:/data/backups
