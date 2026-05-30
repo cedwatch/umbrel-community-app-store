@@ -1,42 +1,58 @@
 #!/bin/sh
-# Rclone Backup — runs nightly via crond inside container
-# Config read from /data/config/settings.json
+# Rclone Backup — cedwatch
+# Reads /data/config/settings.json and runs rclone sync
 
 SETTINGS="/data/config/settings.json"
+CONF="/data/config/rclone.conf"
+KEY="/data/config/id_rsa"
 LOG="/data/config/backup.log"
-
-if [ ! -f "$SETTINGS" ]; then
-    echo "$(date '+%Y-%m-%d %H:%M:%S') ERROR: No settings.json found. Configure via web UI." >> "$LOG"
-    exit 1
-fi
-
-# Parse settings
-REMOTE=$(php -r "echo json_decode(file_get_contents('$SETTINGS'))->remote ?? 'Spaceship';")
-SOURCE=$(php -r "echo json_decode(file_get_contents('$SETTINGS'))->source ?? 'public_html';")
 DAY=$(date +%A)
 DEST="/data/backups/daily_$DAY"
 
-# Build filter args from folders array
-FILTERS=$(php -r "
-\$s = json_decode(file_get_contents('$SETTINGS'));
-\$out = '';
-foreach ((\$s->folders ?? []) as \$f) {
-    \$out .= '--filter \"+ ' . trim(\$f) . '/**\" ';
-}
-foreach ((\$s->excludes ?? []) as \$e) {
-    \$out .= '--filter \"- ' . trim(\$e) . '\" ';
-}
-\$out .= '--filter \"- **\"';
-echo \$out;
-")
-
 echo "=== $(date '+%Y-%m-%d %H:%M:%S') === Starting backup to daily_$DAY ===" >> "$LOG"
 
-eval rclone sync \
-    --config /data/config/rclone.conf \
+if [ ! -f "$SETTINGS" ]; then
+    echo "ERROR: No settings.json" >> "$LOG"
+    exit 1
+fi
+if [ ! -f "$CONF" ]; then
+    echo "ERROR: No rclone.conf" >> "$LOG"
+    exit 1
+fi
+if [ ! -f "$KEY" ]; then
+    echo "ERROR: No id_rsa" >> "$LOG"
+    exit 1
+fi
+
+# Read values directly with grep/sed — no php, no eval
+REMOTE=$(grep '"remote"' "$SETTINGS" | sed 's/.*": *"\(.*\)".*/\1/')
+SOURCE=$(grep '"source"' "$SETTINGS" | sed 's/.*": *"\(.*\)".*/\1/')
+
+# Build filter file
+FILTERFILE="/tmp/rclone-filters.txt"
+rm -f "$FILTERFILE"
+
+# Excludes first
+python3 -c "
+import json
+with open('$SETTINGS') as f:
+    s = json.load(f)
+for e in s.get('excludes', []):
+    print('- ' + e.strip())
+for folder in s.get('folders', []):
+    print('+ ' + folder.strip() + '/**')
+print('- **')
+" >> "$FILTERFILE" 2>> "$LOG"
+
+echo "--- Filters applied ---" >> "$LOG"
+cat "$FILTERFILE" >> "$LOG"
+echo "--- Running rclone ---" >> "$LOG"
+
+/usr/local/bin/rclone sync \
+    --config "$CONF" \
     "$REMOTE:$SOURCE" "$DEST" \
-    $FILTERS \
-    --sftp-key-file /data/config/id_rsa \
+    --filter-from "$FILTERFILE" \
+    --sftp-key-file "$KEY" \
     --log-level INFO \
     --log-file "$LOG"
 

@@ -5,7 +5,7 @@ FROM rclone/rclone:latest AS rclone
 FROM php:8.1-fpm-alpine
 
 # Install nginx, crond, openssh-client
-RUN apk add --no-cache nginx openssh-client tzdata unzip
+RUN apk add --no-cache nginx openssh-client tzdata unzip python3
 
 # Copy rclone binary from official image — arch-correct, no wget needed
 COPY --from=rclone /usr/local/bin/rclone /usr/local/bin/rclone
