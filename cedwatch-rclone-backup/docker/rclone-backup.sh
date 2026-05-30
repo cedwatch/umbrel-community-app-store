@@ -53,7 +53,6 @@ echo "--- Running rclone ---" >> "$LOG"
     "$REMOTE:$SOURCE" "$DEST" \
     --filter-from "$FILTERFILE" \
     --sftp-key-file "$KEY" \
-    --no-check-dest \
     --sftp-disable-hashcheck \
     --log-level INFO \
     --log-file "$LOG"
