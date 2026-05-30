@@ -1,4 +1,4 @@
-cedwatch Umbrel Community App Store
+# cedwatch Umbrel Community App Store
 
 A collection of apps for [Umbrel](https://umbrel.com), built in Kampot, Cambodia.
 
@@ -13,7 +13,7 @@ https://github.com/cedwatch/umbrel-community-app-store
 ## Apps
 
 | App | Description | Category |
-| --- | --- | --- |
+|-----|-------------|----------|
 | [BlockBoard](./cedwatch-blockboard/) | Real-time Bitcoin dashboard | Finance |
 | [NetWatch](./cedwatch-netwatch/) | ISP stability monitor | Networking |
 | [Orb](./cedwatch-orb/) | Network sensor by Ookla | Networking |
