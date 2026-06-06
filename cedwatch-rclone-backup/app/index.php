@@ -39,6 +39,21 @@ function writeRcloneConf(array $s): void {
     file_put_contents(RCLONE_CONF, $conf);
 }
 
+function regenerateFilters(array $s): void {
+    $filterfile = '/tmp/rclone-filters.txt';
+    $lines = [];
+    foreach (($s['excludes'] ?? []) as $e) {
+        $lines[] = '- ' . trim($e);
+    }
+    foreach (($s['folders'] ?? []) as $f) {
+        $lines[] = '+ ' . trim($f) . '/**';
+    }
+    $lines[] = '- **';
+    file_put_contents($filterfile, implode("
+", $lines) . "
+");
+}
+
 function updateCron(array $s): void {
     $min  = intval($s['minute'] ?? 10);
     $hour = intval($s['hour']   ?? 0);
@@ -96,6 +111,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
         saveSettings($s);
         writeRcloneConf($s);
         updateCron($s);
+        // Regenerate filter file immediately so next Run Now uses updated folders
+        regenerateFilters($s);
         $msg = '✓ Settings saved. Cron updated.';
         $msgType = 'ok';
     }
