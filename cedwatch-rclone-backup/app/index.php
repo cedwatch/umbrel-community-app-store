@@ -127,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 
     // Run now
     if ($_POST['action'] === 'runnow') {
-        exec('nohup /usr/local/bin/rclone-backup.sh > /dev/null 2>&1 &');
+        exec('nohup /usr/local/bin/rclone-backup.sh >> /data/config/backup.log 2>&1 &');
         $msg = '✓ Backup started in background. Check log below.';
         $msgType = 'ok';
     }
