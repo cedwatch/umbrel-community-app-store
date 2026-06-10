@@ -7,7 +7,7 @@ services:
       - "8765:8765"
     volumes:
       - ${APP_DATA_DIR}/config:/etc/motioneye
-      - /home/umbrel/umbrel/home/S4Cam:/var/lib/motioneye
+      - /home/umbrel/umbrel/home/S5Cam:/var/lib/motioneye
       - /etc/localtime:/etc/localtime:ro
     environment:
       - TZ=Asia/PhnomPenh
