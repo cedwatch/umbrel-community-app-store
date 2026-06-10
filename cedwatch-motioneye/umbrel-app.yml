@@ -16,7 +16,7 @@ repo: https://github.com/ccrisan/motioneye
 support: https://github.com/cedwatch/umbrel-community-app-store/issues
 gallery: []
 path: ""
-defaultUsername: "admin"
+defaultUsername: "umbrel"
 defaultPassword: ""
 submitter: Ced.watch
 submission: https://github.com/cedwatch/umbrel-community-app-store
