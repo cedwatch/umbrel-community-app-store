@@ -19,4 +19,5 @@ path: ""
 defaultUsername: "admin"
 defaultPassword: ""
 submitter: Ced.watch
-submission: https://github.com/cedwatch/umbrel-community-app-storeicon: https://raw.githubusercontent.com/cedwatch/umbrel-community-app-store/main/cedwatch-motioneye/icon.png
+submission: https://github.com/cedwatch/umbrel-community-app-store
+icon: https://raw.githubusercontent.com/cedwatch/umbrel-community-app-store/main/cedwatch-motioneye/icon.png
