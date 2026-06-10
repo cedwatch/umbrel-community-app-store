@@ -3,7 +3,9 @@ version: "3.7"
 services:
   web:
     image: ccrisan/motioneye:master-armhf
-    restart: on-failure
+    restart: unless-stopped
+        ports:
+      - "8765:80"
     user: "0:0"
     volumes:
       # Stockage de la configuration de MotionEye dans le dossier de l'app Umbrel
