@@ -3,6 +3,7 @@ id: cedwatch-motioneye
 category: media
 name: MotionEye
 version: "master"
+port: 8765
 tagline: Serveur de vidéosurveillance NVR (Optimisé Pi 4)
 description: >-
   MotionEye est une interface web pour le démon vidéo "motion".
@@ -13,7 +14,6 @@ website: https://github.com/cedwatch
 dependencies: []
 repo: https://github.com/ccrisan/motioneye
 support: https://github.com/cedwatch/umbrel-community-app-store/issues
-port: 8765
 gallery: []
 path: ""
 defaultUsername: "admin"
